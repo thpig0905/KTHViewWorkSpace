@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    header {
+      background-color: orangered;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+    }
+    section{
+      display: flex;
+      flex: 1;
+    }
+    section article{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    article:nth-child(1) {
+      background-color: yellow;
+    }
+
+    article:nth-child(2) {
+      background-color: lightgray;
+      width: 180%;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    article:nth-child(3) {
+      background-color: lightgreen;
+    }
+
+    footer {
+      background-color: aquamarine;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+    }
+    @media(max-width:600px){
+      body{
+        line-height: 500%;
+      }
+      .container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      section{
+        display: flex;
+        flex-direction: column;
+      }
+      article:nth-child(2) {
+      background-color: lightgray;
+      line-height: 200%;
+      padding: 5%;
+      width: 100%;
+    }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>header</header>
+    <section>
+      <article>left</article>
+      <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ratione pariatur autem dolor sit libero voluptates expedita. Recusandae eligendi nostrum, magnam doloribus quo pariatur doloremque, saepe similique quia, minus atque.</article>
+      <article>right</article>
+    </section>
+    <footer>footer</footer>
+  </div>
+</body>
+
+</html>

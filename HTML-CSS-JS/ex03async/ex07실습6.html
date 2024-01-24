@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>15.00</h1>
+  <button class="start">시작</button>
+  <button class="reset">초기화</button>
+</body>
+</html>
+<script>
+  const h1 = document.querySelector('h1');
+
+  // start 버튼을 누히면 15초에서 0.01초씩 감소하고 0초가 되면 0으로 표시. 5초미만이면 빨간색으로 표시
+  // reset 버튼을 누르면 15초로 초기화
+
+  const startBtn = document.querySelector('.start');
+  const resetBtn = document.querySelector('.reset');
+
+  let time = 15;
+  let timer;
+
+  startBtn.addEventListener('click', () => {
+    timer = setInterval(() => {
+      if (time > 5) {
+        h1.style.color = 'black';
+      } else {
+        h1.style.color = 'red';
+      }
+      h1.textContent = time.toFixed(2);
+      time -= 0.01;
+      if (time < 0) {
+        clearInterval(timer);
+        h1.style.color = 'black';
+        h1.textContent = '15초가 지났습니다.';
+      }
+    }, 10);
+  });
+
+  resetBtn.addEventListener('click', () => {
+    clearInterval(timer);
+    time = 15;
+    h1.textContent = time.toFixed(2);
+    h1.style.color = 'black';
+  });
+
+  // let time = 15;
+  // const timer = setInterval(() => {
+  //   if (time > 5) {
+  //     h1.style.color = 'black';
+  //   } else {
+  //     h1.style.color = 'red';
+  //   }
+  //   h1.textContent = time.toFixed(2);
+  //   time -= 0.01;
+  //   if (time < 0) {
+  //     clearInterval(timer);
+  //     h1.textContent = 0;
+  //   }
+  // }, 10);
+</script>

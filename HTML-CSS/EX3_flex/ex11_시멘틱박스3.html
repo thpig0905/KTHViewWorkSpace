@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container{
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: yellow;
+      padding: 2%;
+      padding-left: 1%;
+      height: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .banner {
+      background-color: yellowgreen;
+      padding: 2%;
+      padding-left: 1%;
+      height: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    section:nth-child(2){
+      display: flex;
+      flex-direction: row;
+      /* flex: 1; */
+      height: 100vh;
+    }
+
+    Nav{
+      background-color: pink;
+      padding: 1%;
+      width: calc(100vw * 0.6);
+      display: flex;
+      justify-content: left;
+    }
+
+    main{
+      background-color: skyblue;
+      padding: 1%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <div class="container">
+        <header><h3>Header</h3></header>
+        <div class="banner"><h3>Banner</h3></div>
+      </div>
+    </section>
+    <section>
+      <Nav><h3>Navi</h3></Nav>
+      <main>
+        <h3>Main</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam fugiat at molestiae exercitationem illo sed quis ipsum, labore minima iure cupiditate recusandae corporis optio rerum quae atque dicta necessitatibus ipsam quisquam corrupti molestias! Delectus, explicabo aut. Magni illo ex repellendus maiores libero sit, corporis facere facilis totam, aperiam, dicta sunt eum animi saepe? Quasi accusantium quisquam, omnis laboriosam blanditiis cumque, vel earum quo nam exercitationem quam voluptas itaque, culpa sequi nostrum nemo ea reprehenderit quas magni atque sed et! Est neque eum consectetur a quisquam harum, rerum minima aperiam quas ullam! Neque corrupti quas corporis hic quaerat ab mollitia quam consequuntur eum accusamus exercitationem eligendi repellendus reprehenderit fugiat dicta voluptatibus, inventore facilis atque quod sed at veritatis pariatur earum? Quam sequi deleniti iste ut illo cumque saepe quia sint, incidunt obcaecati omnis dolorem reprehenderit exercitationem accusantium perspiciatis quo nostrum labore molestiae voluptas deserunt officia explicabo. Culpa placeat ipsam aut porro.</p>
+      </main>
+    </section>
+  </div>
+</body>
+
+</html>

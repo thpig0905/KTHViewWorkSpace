@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <style>
+    @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .continer {
+      height: 100%;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .lnb-inner {
+      background-color: crimson;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .gnb-inner {
+      background-color: black;
+      height: 80px;
+      line-height: 80px;
+    }
+
+    section p {
+      color: #ddd;
+      font-size: 3em;
+      line-height: 1em;
+    }
+
+    .lnb-inner,
+    .gnb-inner {
+      transition: 0.5s;
+    }
+
+    header.active .lnb-inner {
+      height: 0;
+    }
+
+    header.active .gnb-inner {
+      background-color: white;
+      color: black;
+      box-shadow: 0 3px 3px black;
+    }
+
+    .btn-top {
+      position: fixed;
+      font-size: 30px;
+      right: 20px;
+      bottom: 20px;
+      background-color: crimson;
+      color: white;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .btn-top.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="continer">
+    <header>
+      <div class="lnb-inner">LAN inner</div>
+      <div class="gnb-inner">GNB inner</div>
+    </header>
+    <section>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsam perspiciatis illum magnam voluptates
+        soluta, voluptate est temporibus recusandae? Reiciendis adipisci ipsa a, incidunt nostrum eius. Modi ut maxime
+        possimus veritatis inventore delectus suscipit nobis aspernatur, quasi voluptate consectetur ipsum porro sequi
+        eum ab autem harum repellat earum vel voluptates voluptatem debitis exercitationem? Dolore eum autem at amet
+        aliquid ipsum provident voluptatem nisi aspernatur fuga, earum illum aliquam magni facere pariatur asperiores
+        quos placeat qui sequi magnam! Consequatur facere molestiae praesentium, dignissimos repellat adipisci eos
+        repudiandae dolor, et veritatis facilis distinctio ipsa magni accusamus optio animi nemo eum magnam. Est.</p>
+    </section>
+  </div>
+  <a href="#" class="btn-top"><i class="fa fa-arrow-up"></i></a>
+</body>
+
+</html>
+<script>
+  $(window).scroll(
+    function() {
+      if ($(this).scrollTop() > 50) {
+        $('header').addClass('active');
+        $('.btn-top').addClass('active');
+      } else {
+        $('header').removeClass('active');
+        $('.btn-top').removeClass('active');
+      }
+    
+  });
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  #canvas {
+    border: 1px solid #000;
+  }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="800" height="400"></canvas>
+</body>
+</html>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.rect(0, 0, 100, 100);
+  ctx.fillStyle = 'blue';
+  ctx.fill();
+  
+  let x = 0;
+  let y = 0;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      x += 10;
+      if (x > 800 - 100) {
+        x = 800 - 100;
+      }
+    } else if (e.key === 'ArrowLeft') {
+      x -= 10;
+      if (x < 0) {
+        x = 0;
+      }
+    } else if (e.key === 'ArrowUp') {
+      y -= 10;
+      if (y < 0) {
+        y = 0;
+      }
+    } else if (e.key === 'ArrowDown') {
+      y += 10;
+      if (y > 400 - 100) {
+        y = 400 - 100;
+      }
+    }
+    ctx.clearRect(0, 0, 800, 400);
+    ctx.beginPath();
+    ctx.rect(x, y, 100, 100);
+    ctx.fillStyle = 'blue';
+    ctx.fill();
+  });
+</script>

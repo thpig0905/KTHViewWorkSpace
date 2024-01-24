@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    header{
+      height: 5vh;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section{
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav{
+      height: 90vh;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+    article{
+      height: 90vh;
+      background-color: lightgrey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 6;
+    }
+    aside{
+      height: 90vh;
+      background-color: lightcoral;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+    footer{
+      height: 5vh;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media(max-width:786px){
+      section{
+        flex-direction: column;
+        width: 100vw;
+      }
+      article{
+        width: 100vw;
+      }
+      nav{
+        width: 100vw;
+      }
+      aside{
+        width: 100vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>Header</header>
+    <section>
+      <nav>Nav</nav>
+      <article>Article</article>
+      <aside>Aside</aside>
+    </section>
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>

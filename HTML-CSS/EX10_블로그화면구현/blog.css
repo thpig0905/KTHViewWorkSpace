@@ -1,0 +1,66 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+a{ text-decoration: none; color: #222;}
+h1, h2, h3, h4, h5, h6{margin: 0;}
+button{cursor: pointer; outline: none;}
+body{
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Monserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 20px; */
+  box-sizing: border-box;
+  width: 100vw;
+}
+.post{
+  height: 600px;
+  width: 300px;
+  /* margin: 20px; */
+}
+.text{
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 300px;
+}
+h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: aliceblue;
+}
+p{
+  text-align: center;
+  width: 100%;
+  color: aliceblue;
+}
+.item{
+  height: 300px;
+  width: 300px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.item:hover{
+  transform: scale(1.05);
+  overflow: hidden;
+}

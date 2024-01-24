@@ -1,0 +1,97 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+a{ text-decoration: none; color: #222;}
+h1, h2, h3, h4, h5, h6{margin: 0;}
+button{cursor: pointer; outline: none; border: none;}
+body{
+  margin: 0;
+  height: 100vh;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+main{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form{
+  box-sizing: border-box;
+  width: 600px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 0 20px darkgray;
+}
+.login-form h2{
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.sns-login{
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+.btn:last-child{
+  margin-right: 0;
+}
+.btn{
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin-right: 3px;
+  font-size: 12px;
+}
+.btn.Facebook{
+  background-color: #328bff;
+}
+.btn.Twitter{
+  background-color: #1DA1F2;
+}
+.btn.Google{
+  background-color: #DF2029;
+}
+.field{
+  margin: 20px 0;
+  display: flex;
+}
+.field label{
+  flex: 1;
+}
+.field input{
+  flex: 4;
+}
+.login{
+  padding: 5px 40px;
+  color: white;
+  border-radius: 3px;
+  background-color: royalblue;
+  float: right;
+}
+@media(max-width:768px){
+  .login-form{
+    width: 100%;
+  }
+  .sns-login{
+    flex-direction: column;
+  }
+  .btn{
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .field{
+    flex-direction: column;
+    margin: 10px 0;
+  }
+  .login{
+    width: 100%;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="800" height="400"></canvas>
+
+</body>
+
+</html>
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+
+  ctx.beginPath();
+  ctx.arc(0 + 10, 0 + 100, 10, 0, Math.PI * 2);
+  ctx.fillStyle = 'green';
+  ctx.fill();
+
+  let isDrowing = false;
+  let x = 10;
+  let y = 100;
+
+  canvas.addEventListener('click', () => {
+    isDrowing = !isDrowing;
+    if (x > 800 - 10) {
+      isDrowing = false;
+    }
+    if (isDrowing) {
+      let intevral = setInterval(() => {
+        ctx.clearRect(0, 0, 800, 400);
+        ctx.beginPath();
+        ctx.arc(x, y, 10, 0, Math.PI * 2);
+        ctx.fillStyle = 'green';
+        ctx.fill();
+        x += 5;
+        if (x > 800 - 10 || !isDrowing) {
+          isDrowing = false;
+          clearInterval(intevral);
+        }
+      }, 50);
+    }
+  });
+</script>

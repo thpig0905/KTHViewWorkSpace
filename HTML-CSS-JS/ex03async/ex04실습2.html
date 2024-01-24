@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body onload="timer()">
+  <h1></h1>
+  <button class="btn1">1초 뒤에 초기화하고 다시 시작</button>
+  <button class="btn2">완전 종료</button>
+</body>
+</html>
+<script>
+
+  let h1 = document.querySelector('h1');
+  let btn1 = document.querySelector('.btn1');
+  let btn2 = document.querySelector('.btn2');
+  function timer() {
+    let num = 0;
+    let timerId = setInterval(() => {
+      num++;
+      h1.textContent = num;
+    }, 50);
+    btn1.addEventListener('click', () => {
+      setTimeout(() => {
+        clearInterval(timerId);
+        timer();
+      }, 1000);
+    });
+    btn2.addEventListener('click', () => {
+      clearInterval(timerId);
+    });
+  }
+</script>

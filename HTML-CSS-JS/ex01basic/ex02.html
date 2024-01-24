@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .list {
+      border: 1px solid black;
+      width: 500px;
+      height: 800px;
+      background-color: #eee;
+      display: flex;
+    }
+    .box { 
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+      border: 1px solid red;
+      margin: 5px;
+    }
+    button{
+      border: none;
+      font-size: 1.2em;
+      padding: 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="list">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <button class="addbtn">박스 추가</button>
+  <button class="removebtn">박스 삭제</button>
+</body>
+</html>
+<script>
+  const list = document.querySelector('.list');
+  const newbox = document.createElement('div');
+  const buttons = document.querySelectorAll('button');
+
+  function addBox() {
+    if(list.childElementCount >= 8) {
+      alert('더 이상 박스를 추가할 수 없습니다.');
+      return;
+    }
+    const newbox = document.createElement('div');
+    newbox.classList.add('box');
+    list.appendChild(newbox);
+    alert('박스가 추가되었습니다.');
+  }
+
+  function removeBox() {
+    if(list.childElementCount <= 0) {
+      alert('더 이상 박스를 삭제할 수 없습니다.');
+      return;
+    }
+    const boxes = document.querySelectorAll('.box');
+    if(boxes.length > 0) {
+      list.removeChild(boxes[boxes.length - 1]);
+      alert('박스가 삭제되었습니다.');
+    }
+  }
+
+  buttons[0].addEventListener("click", addBox);
+  buttons[1].addEventListener("click", removeBox);
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      height: 100%;
+      text-align: center;
+      line-height: 100px;
+    }
+    .container{
+      display: flex;
+      flex-direction: column;
+    }
+    .container > div {
+      flex: 1;
+    }
+    .section{
+      display: flex;
+      flex: 8;
+    }
+    .section div{
+      line-height: 30;
+    }
+    header{
+      background-color: orangered;
+      height: 5vh;
+      line-height: 50px;
+    }
+    footer{
+      background-color: aquamarine;
+      height: 5vh;
+      line-height: 50px;
+    }
+    .img{
+      background-color: lightgray;
+    }
+    .boxleft{
+      background-color: yellow;
+    }
+    .boxright{
+      background-color: lightgreen;
+    }
+    @media(max-width:768px){
+      .container{
+        display: flex;
+        flex-direction: column;
+      }
+      .container .section{
+        display: flex;
+        flex-direction: column;
+        /* height: calc(100% / 3); */
+      }
+      .section{
+        /* height: 10%; */
+      }
+      .section div{
+        /* height: calc(100% / 3);s */
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>header</header>
+  <div class="container">
+    <div class="section">
+      <div class="boxleft">left</div>
+      <div class="img">img</div>
+      <div class="boxright">right</div>
+    </div>
+  </div>
+  <footer>footer</footer>
+</body>
+</html>

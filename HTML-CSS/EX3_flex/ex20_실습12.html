@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll;
+    }
+    main{
+      display: flex;
+      width: 100vw;
+    }
+    .card{
+      border: 1px solid violet;
+      padding: 15px;
+      width: 30%;
+      margin: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    p{
+      width: 80%;
+      padding: 5px;
+    }
+    img{
+      object-fit: cover;
+    }
+    .img{
+      background-color: lightgray;
+      height: 150px;
+      transition: 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      color: gray;
+    }
+    .img:hover{
+      transform: scale(1.03);
+    }
+    @media(max-width:768px){
+      body{
+        margin: 3vw;
+      }
+      main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 3vw;
+      }
+      .card{
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h3>Card #01</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sapiente laborum, eveniet ipsa officiis assumenda ea perspiciatis quidem eaque ad ab dolor laudantium ipsum. Ut odit dolore tenetur nemo porro. Hic ipsam illum tempore atque minima dolore quam quos in voluptas mollitia, blanditiis aut harum soluta, reprehenderit consequuntur, vero perferendis iste minus voluptatum necessitatibus! Praesentium dolorem soluta ipsam molestiae, beatae recusandae ipsum corporis amet debitis excepturi inventore doloremque! Tempore porro neque quibusdam, libero minima ipsa excepturi fugiat sapiente inventore, accusantium alias soluta esse vitae obcaecati? Expedita repellat repudiandae alias vero doloribus ea facilis ducimus enim commodi sint! Natus beatae repudiandae accusamus fuga fugit fugiat dolore mollitia eius, expedita, asperiores velit voluptas ratione! Maiores mollitia iure earum magnam facilis error, molestiae velit, blanditiis, placeat laborum natus amet veritatis dolor sapiente illum. Odio veniam voluptatum, ad fuga laborum laboriosam consequatur laudantium debitis minus, deleniti adipisci quod voluptatem quibusdam enim quam iusto voluptate! Esse excepturi, assumenda nobis mollitia in, nisi quibusdam soluta, perspiciatis alias atque voluptate ipsa laboriosam eveniet ex error repellendus consequatur unde porro minus architecto totam. Odit beatae ab ipsa aliquid iste fugit quo molestias obcaecati at, voluptatem doloribus explicabo accusamus illum qui dolorem minus inventore corporis id error quidem laudantium! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam rem delectus consequatur nisi magni neque possimus omnis exercitationem. Ea officia libero numquam sint non nesciunt esse, excepturi tempora deserunt maiores! Lorem ipsum dolor sit amet consect dgnjs dfndslnfl njo foe fo eo ef os f dlf ls lfj es fles fles lffn sejf ls  fo so fl lf slf sl flks lkf sletur aeeeeeeeeee eeeeeeee eeeeeedipisicing elit. Ipsa itaque id dolorem eum cum minima odio corporis quidem doloremque alias.</p>
+      <div class="img">300 x 150<img src="" alt=""></div>
+    </div>
+    <div class="card">
+      <h3>Card #02</h3>
+      <p>nsquam nostrum ip.</p>
+      <div class="img">300 x 150<img src="" alt=""></div>
+    </div>
+    <div class="card">
+      <h3>Card #03</h3>
+      <p>Lorem ipsum suscipit ex maxime. Eligendi, vel.</p>
+      <div class="img">300 x 150<img ></div>
+    </div>
+  </main>
+</body>
+</html>

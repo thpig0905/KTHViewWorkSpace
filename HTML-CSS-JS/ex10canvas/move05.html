@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #canvas {
+      background-color: palegreen;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .restart {
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      display: none;
+    }
+
+    .time {
+      border-radius: 10px;
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      font-size: 2em;
+      font-weight: bold;
+      background-color: black;
+    }
+
+    .score {
+      border-radius: 10px;
+      width: 100px;
+      height: 50px;
+      margin: 10px;
+      padding: 10px;
+      color: white;
+      background-color: black;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 50px;
+    }
+  </style>
+  <script defer src="move05.js"></script>
+</head>
+
+<body>
+  <canvas id="canvas" width="800px" height="600px"></canvas>
+  <div class="text">
+    <div class="score"></div>
+    <div class="time"></div>
+    <button class="restart">다시시작</button>
+  </div>
+</body>
+
+</html>

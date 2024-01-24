@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    header{
+      border-bottom: 1px solid #ccc;
+      width: 50vw;
+      text-align: center;
+    }
+    .list{
+      width: 50vw;
+    }
+    .box{
+      width: 50vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+    .box p{
+      font-size: 26px;
+      width: 200px;
+      flex: 1;
+    }
+    .box input{
+      width: 200px;
+      height: 45px;
+      font-size: 26px;
+      text-align: center;
+    }
+    .btn{
+      display: flex;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn button{
+      width: 100px;
+      height: 50px;
+      margin: 0 10px;
+      font-size: 20px;
+      background-color: lightblue;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+    .btn p{
+      width: 100px;
+      height: 50px;
+      margin: 0 10px;
+      font-size: 20px;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body onload="makeQ()">
+  <div class="container">
+    <header>
+      <h1>산수 문제를 풀어 봅시다.</h1>
+      <h2>수식을 계산하여 답을 입력하고 채점버튼을 누르세요. </h2>
+    </header>
+    <div class="list">
+      <div class="box">
+        <p class="one"></p>
+        <input type="text" id="one">
+      </div>
+      <div class="box">
+        <p class="two"></p>
+        <input type="text" id="two">
+      </div>
+      <div class="box">
+        <p class="three"></p>
+        <input type="text" id="three">
+      </div>
+      <div class="box">
+        <p class="four"></p>
+        <input type="text" id="four">
+      </div>
+    </div>
+    <div class="btn">
+      <button class="check">채점</button>
+      <p class="count"></p>
+      <button class="re">다시</button>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  const math = ['+', '-', '*', '/'];
+  function random(){
+    return Math.floor(Math.random() * 4);
+  }
+  function randomNum(){
+    return Math.floor(Math.random() * 10 + 1);
+  }
+  const one = document.querySelector('.one');
+  const two = document.querySelector('.two');
+  const three = document.querySelector('.three');
+  const four = document.querySelector('.four');
+
+  const inputall = document.querySelectorAll('input');
+  const oneInput = document.querySelector('#one');
+  const twoInput = document.querySelector('#two');
+  const threeInput = document.querySelector('#three');
+  const fourInput = document.querySelector('#four');
+
+  const check = document.querySelector('.check');
+  const re = document.querySelector('.re');
+  const p = document.querySelector('.btn p');
+  const cnt = document.querySelector('.count');
+  let n1 = '';
+  let n2 = '';    
+  let n3 = '';
+  let n4 = '';
+
+  function makeQ(){
+    cnt.innerHTML = '---';
+    n1 += randomNum();
+    n1 += math[random()];
+    n1 += randomNum();
+
+    n2 += randomNum();
+    n2 += math[random()];
+    n2 += randomNum();
+
+    n3 += randomNum();
+    n3 += math[random()];
+    n3 += randomNum();
+
+    n4 += randomNum();
+    n4 += math[random()];
+    n4 += randomNum();
+
+    one.innerHTML = n1;
+    two.innerHTML = n2;
+    three.innerHTML = n3;
+    four.innerHTML = n4;
+  }
+
+  let count = 0;
+  check.addEventListener('click', event => {
+    if(oneInput.value == eval(n1).toFixed(0)){
+      count++;
+      one.style.color = 'blue';
+    } else if(oneInput.value != eval(n1).toFixed(0) || oneInput.value == ''){
+      one.style.textDecoration = 'line-through';
+      one.style.color = 'red';
+    }
+    if(twoInput.value == eval(n2).toFixed(0)){
+      count++;
+      two.style.color = 'blue';
+    } else if (oneInput.value != eval(n2).toFixed(0) || oneInput.value == ''){
+      two.style.textDecoration = 'line-through';
+      two.style.color = 'red';
+    }
+    if(threeInput.value == eval(n3).toFixed(0)){
+      count++;
+      three.style.color = 'blue';
+    } else if(oneInput.value != eval(n3).toFixed(0) || oneInput.value == '') {
+      three.style.textDecoration = 'line-through';
+      three.style.color = 'red';
+    }
+    if(fourInput.value == eval(n4).toFixed(0)){
+      count++;
+      four.style.color = 'blue';
+    } else if (oneInput.value != eval(n4).toFixed(0) || oneInput.value == ''){
+      four.style.textDecoration = 'line-through';
+      four.style.color = 'red';
+    }
+    cnt.innerHTML = count;
+  })
+
+  re.addEventListener('click', event => {
+    n1 = '';
+    n2 = '';
+    n3 = '';
+    n4 = '';
+    one.style.textDecoration = 'none';
+    two.style.textDecoration = 'none';
+    three.style.textDecoration = 'none';
+    four.style.textDecoration = 'none';
+    one.style.color = 'black';
+    two.style.color = 'black';
+    three.style.color = 'black';
+    four.style.color = 'black';
+    count = 0;
+    inputall.forEach(item => {
+      item.value = '';
+    });
+    makeQ();
+  })
+</script>

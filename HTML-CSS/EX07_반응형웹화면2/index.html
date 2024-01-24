@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <header>
+        <h2>웹 퍼블리싱 위한 <span style="color: red;">실무 실습 위주 학습</span>! <br>신속하게 <span style="color: red;">더조은 IT 아카데미 상담</span>을 신청하실 수 있습니다.</h2>
+        <div class="aline"></div>
+        <h5>상담 내용에 따라 비용과 절차에 관련하여 전화 또는 이메일로 신속하게 상담해 드립니다.</h5>
+      </header>
+      <main>
+        <div class="row">
+          <div class="field">
+            <label for="">이름<em style="color: red;">*</em></label>
+            <input type="text" required placeholder="이름을 입력하세요.">
+          </div>
+          <div class="field">
+            <label for="">이메일<em style="color: red;">*</em></label>
+            <input type="email" required placeholder="이메일을 입력하세요.">
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="">연락처<em style="color: red;">*</em></label>
+            <input type="number" required placeholder="연락처를 입력하세요.">
+          </div>
+          <div class="field">
+            <label for="">상담구분<em style="color: red;">*</em></label>
+            <select required>
+              <option value="">선택하세요</option>
+              <option value="">온라인강의</option>
+              <option value="">오프라인강의</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="">상담내용<em style="color: red;">*</em></label>
+            <div class="field">
+              <textarea rows="5" required placeholder="상담 접수가 이루어진 후 24시간 내에 연락드리겠습니다. 감사합니다."></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <label for="">개인정보 취급방침(필수)</label>
+          <iframe src="style.css" frameborder="0"></iframe>
+          <div class="field">
+            <input type="checkbox">
+            <span>개인정보 취급방침을 일었으며 이에 동의합니다.</span>
+          </div>
+          <div class="agree">
+            <button>상담신청</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

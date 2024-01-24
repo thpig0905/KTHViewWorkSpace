@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  <form action="">
+    <input type="text">
+    <input type="submit" value="저장하기">
+  </form>
+  <form class="del">
+    <input type="text" class="delInput">
+    <input type="submit" value="삭제하기">
+  </form>
+  <div class="save"></div>
+</body>
+</html>
+<script>
+  const form = document.querySelector('form');
+  const save = document.querySelector('.save');
+  const del = document.querySelector('.del');
+
+  let textArr = [];
+  if (localStorage.getItem('text') != null){
+    textArr = [];
+    textArr = JSON.parse(localStorage.getItem('text'));
+    localStorage.setItem('text', JSON.stringify(textArr));
+    save.innerHTML = '';
+    for(let i = 0; i < textArr.length; i++){
+      document.querySelector('.save').innerHTML += textArr[i];
+    }
+  };
+
+  form.addEventListener('submit', () => {
+    if (localStorage.getItem('text') != null){
+      textArr = [];
+      textArr = JSON.parse(localStorage.getItem('text'));
+      console.log(textArr);
+    }
+    event.preventDefault();
+    const text = document.querySelector('input[type=text]').value + '<br>';
+    textArr.push(text);
+    localStorage.setItem('text', JSON.stringify(textArr));
+    save.innerHTML = '';
+    for(let i = 0; i < textArr.length; i++){
+      document.querySelector('.save').innerHTML += textArr[i];
+    }
+  });
+
+  del.addEventListener('submit', () => {
+    for (let i = 0; i < textArr.length; i++){
+      if (textArr[i] == document.querySelector('.delInput').value + '<br>'){
+        textArr.splice(i, 1);
+        localStorage.setItem('text', JSON.stringify(textArr));
+        document.querySelector('.save').innerHTML = textArr;
+      }
+    }
+  });
+</script>

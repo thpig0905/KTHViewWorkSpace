@@ -1,0 +1,90 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+a{ text-decoration: none; color: #222;}
+h1, h2, h3, h4, h5, h6{margin: 0;}
+button{cursor: pointer; outline: none;}
+body{
+  margin: 0;
+  height: 100vh;
+  font-family: 'Monserrat', sans-serif;
+}
+section{
+  width: 1000px;
+  margin: auto;
+  display: flex;
+}
+.post{
+  display: flex;
+}
+.post:nth-child(odd){
+  flex-direction: column;
+}
+.post:nth-child(even){
+  flex-direction: column-reverse;
+}
+.item{
+  width: 250px;
+  overflow: hidden;
+}
+.item img{
+  width: 100%;
+  display: block;
+}
+.item img:hover{
+  transform: scale(1.05);
+}
+.text{
+  background-color: lightblue;
+  color: aliceblue;
+  height: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (min-width:767px) and (max-width: 1023px){
+  body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .post:nth-child(odd){
+    flex-direction: row;
+  }
+  .post:nth-child(even){
+    flex-direction: row-reverse;
+  }
+  .text{
+    width: 50%;
+  }
+}
+@media(max-width: 767px){
+  section{
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  .post:nth-child(odd){
+    flex-direction: column;
+  }
+  .post:nth-child(even){
+    flex-direction: column;
+  }
+  .text{
+    height: 200px;
+  }
+  .item{
+    width: 100%;
+  }
+}

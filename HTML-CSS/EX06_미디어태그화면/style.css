@@ -1,0 +1,88 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'); 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+a{ text-decoration: none; color: #222;}
+h1, h2, h3, h4, h5, h6{margin: 0;}
+button{cursor: pointer; outline: none;}
+body{
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Monserrat', sans-serif;
+}
+main{
+  display: flex;
+}
+section{
+  margin-right: 20px;
+  background-color: lightgray;
+  display: flex;
+  width: 600px;
+}
+section:last-child{
+  margin-right: 0;
+}
+.img{
+  width: 100px;
+  margin: 5px;
+  background-color: #222;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.img:nth-child(1){
+  background-image: url(./images/photo-01.png);
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+@media screen and (max-width:767px) {
+  main{
+    flex-direction: column;
+    width: 100vw;
+  }
+  section{
+    margin-bottom: 10px;
+    width: 100vw;
+    flex-direction: column;
+  }
+  section:last-child{
+    margin-bottom: 0;
+  }
+  .text{
+    margin: 5px;
+  }
+  .img{
+    width: calc(100vw - 10px);
+    height: calc(100vh / 2);
+  }
+}
+@media (min-width:768px) and (max-width:1024px) {
+  main{
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  section{
+    width: 100vw;
+    height: calc(100vh / 3);
+    margin-bottom: 5px;
+  }
+  section:last-child{
+    margin-bottom: 0;
+  }
+  .img{
+    height: calc(100% - 10px);
+    width: calc(150px - 10px);
+    margin-right: 5px;
+  }
+  .text{
+    width: calc(100vh / 2 - 15px);
+  }
+}

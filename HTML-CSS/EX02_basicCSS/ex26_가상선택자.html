@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container p:nth-of-type(4) {
+      color: red;
+    }
+    input {
+      width: 400px;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: gray;
+    }
+    input:focus {
+      background-color: white;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    .box1, .box3 {
+      width: 200px;
+      height: 300px;
+      background-color: yellow;
+      margin-top: 10px;
+    }
+    .box3::after {
+      content: "나는 박스4입니다.";
+      display: block;
+      background-color: blue;
+    }
+    .text {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span>
+      <p>1번</p>
+      <p>2번</p>
+      <p>3번</p>
+      <span>4번</span>
+      <span>5번</span>
+      <p>6번</p>
+      <span>7번</span>
+    </span>
+  </div>
+
+  <label>입력창</label>
+  <input type="text" name="test">
+
+  <div class="box1">
+    나는 박스입니다. 
+    <p class="text">나는 박스2입니다.</p>
+  </div>
+  <div class="box3">
+    나는 박스3입니다.
+  </div>
+</body>
+</html>

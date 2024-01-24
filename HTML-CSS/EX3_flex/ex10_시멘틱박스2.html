@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    section{
+      display: flex;
+      margin: 8%;
+      flex: 1;
+    }
+    section article:nth-child(1){
+      background-color: yellow;
+      padding: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    section > article:nth-child(1){
+      display: flex;
+      flex-direction: column;
+      padding: 5%;
+      padding-right: 3%;
+    }
+    section > article:nth-child(2){
+      /* border: 1px solid black; */
+
+      display: flex;
+      flex-direction: column;
+    }
+    section > article:nth-child(2) sub{
+      padding: 5%;
+      padding-top: 0%;
+    }
+    section > article:nth-child(2) h2{
+      padding: 5%;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    section article:nth-child(2) > div:nth-child(1){
+      background-color: skyblue;
+      padding: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    section article:nth-child(2) > div:nth-child(2){
+      background-color: salmon;
+      padding: 3%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media(max-width:700px){
+      body{
+        margin: 0;
+      }
+      section{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      section > article:nth-child(1) > div{
+        padding: 5%;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <article>
+      <h2>content1</h2>
+      <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, commodi voluptatibus! Veritatis, explicabo molestias adipisci voluptatem voluptatum, tempora porro in consectetur numquam dolores fugit ut officiis eius quam exercitationem autem!</div>
+    </article>
+    <article>
+      <div>
+        <h2>sub1</h2>
+        <sub>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, sunt nulla? Saepe, hic officiis quasi, a itaque maxime cumque blanditiis illum doloremque doloribus debitis nostrum quam praesentium tempora perspiciatis commodi!</sub>
+      </div>
+      <div>
+        <h2>sub2</h2>
+        <sub>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim magni unde asperiores veritatis et optio corrupti dolorem porro vitae quibusdam obcaecati esse, maxime ipsum temporibus quaerat saepe soluta ipsam aut!</sub>
+      </div>
+    </article>
+  </section>
+</body>
+</html>

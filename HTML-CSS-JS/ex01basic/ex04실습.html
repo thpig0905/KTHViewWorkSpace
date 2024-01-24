@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: yellow;
+      transition: 0.3s;
+      margin: 10px;
+    }
+    .disflay{
+      margin: 20px;
+      width: 200px;
+      height: 50px;
+      color: blue;
+      border: 1px solid black;
+      font-size: 20px;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="disflay">상태창...</div>
+  <button class="sizeBox" onclick="sizeBox()">박스 크기</button>
+  <button class="moveBox" onclick="moveBox()">박스 움직이기</button>
+  <button class="spinBox" onclick="spinBox()">박스 회전하기</button>
+</body>
+</html>
+
+<script>
+  const box = document.querySelector('.box');
+  const disflay = document.querySelector('.disflay');
+
+  function sizeBox(){
+    if(box.style.transform === 'scale(2)'){
+      disflay.innerHTML = '박스 크기 줄이기';
+      box.style.transform = 'scale(1)';
+      return;
+    } else {
+      disflay.innerHTML = '박스 크기 키우기';
+      box.style.transform = 'scale(2)';
+      return;
+    }
+  }
+
+  function moveBox(){
+    if(box.style.transform === 'translateX(200px)'){
+      disflay.innerHTML = '박스 움직이기';
+      box.style.transform = 'translateX(0px)';
+      return;
+    } else {
+      disflay.innerHTML = '박스 돌아오기';
+      box.style.transform = 'translateX(200px)';
+      return;
+    }
+  }
+
+  function spinBox(){
+    if(box.style.transform === 'rotate(180deg)'){
+      disflay.innerHTML = '박스 회전하기';
+      box.style.transform = 'rotate(0deg)';
+      return;
+    } else {
+      disflay.innerHTML = '박스 돌아오기';
+      box.style.transform = 'rotate(180deg)';
+      return;
+    }
+  }
+</script>

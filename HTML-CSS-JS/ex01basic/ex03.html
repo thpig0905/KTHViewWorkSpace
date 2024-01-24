@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <button class="btn" onclick="clicked()">네모 움직여</button>
+</body>
+</html>
+
+<script>
+  const box = document.querySelector('.box');
+  const btn = document.querySelector('.btn');
+  function clicked(){
+    if(box.style.transform === 'translateX(200px)'){
+      box.style.transform = 'translateX(0px)';
+      box.style.transition = 'all 0.5s';
+      btn.innerHTML = '네모 움직여';
+      return;
+    } else {
+      box.style.transform = 'translateX(200px)';
+      box.style.transition = 'all 0.5s';
+      btn.innerHTML = '네모 돌아와';
+      return;
+    }
+  }
+</script>
